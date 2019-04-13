@@ -1,0 +1,60 @@
+*{
+	user-select: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+html, body{
+	height: 100%;
+}
+body{
+	background-color: black;
+}
+#titulo{
+	text-align: center;
+	font: 20px Ubuntu, calibri;
+	color: orange;
+	display: inline-block;
+	padding: 8px;
+	width: 100%;
+}
+#sair{
+	display: inline-block;
+	font-family: Calibri;
+	text-align: center;
+	width: 100%;
+	color: white;
+}
+#field{
+	text-align: center;
+}
+#textField{
+	border-radius: 5px;
+	padding: 8px;
+	text-align: center;
+}
+#computerChoice{
+	text-align: center;
+}
+#computerChoicetext{
+	font-family: Ubuntu, Calibri;
+	color: yellow;
+	padding: 8px;
+}
+#userChoice {
+	text-align: center;
+}
+#userChoiceTxt {
+	font-family: Ubuntu, Calibri;
+	color: #00FF00;
+	padding: 8px;
+}
+#result{
+	text-align: center;
+}
+#resultTxt{
+	font-family: Ubuntu;
+	color: red;
+	padding: 10px;
+}
+

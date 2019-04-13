@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Ueslow Dating Simulator</title>
+<style type="text/css">
+body{
+	background: no-repeat url(recursos/imagem/background/ueslo.jpg);
+	background-size: cover;
+	overflow: hidden;
+}
+*{
+	-webkit-user-select: none;
+}
+#titulo{
+	font: 58px Curlz MT;
+	color: black;
+	margin: 70px;
+	background-color: rgba(255, 255, 255, 0.39);
+}
+input{
+	border: 0;
+	font-size: 36px;
+	color: white;
+	background-color: black;
+	padding: 10px 20px;
+	font-family: calibri;
+	border-radius: 10px;
+}
+input:hover{
+	background-color: rgba(39, 38, 38, 0.51);
+}
+.botao{
+	position: fixed;
+	left: 45px;
+}
+#iniciar{
+	bottom: 100px;
+}
+#sair{
+	bottom: 15px;
+}
+.hidden{
+	display: none;
+}
+#dialogo{
+	background: rgba(130, 129, 129, 0.54);
+	width: 79%;
+	height: 170px;
+	position: fixed;
+	bottom: 24px;
+	left: 10.5%;
+	border: 7px double black;
+	font: 32px calibri;
+	color: black;
+	text-align: left;
+}
+.a{
+	position: fixed;
+	top: 150px;
+	left: 350px;
+}
+.b{
+	position: fixed;
+	top: 250px;
+	left: 350px;
+}
+.c{
+	position: fixed;
+	top: 350px;
+	left: 350px;
+}
+#triki{
+	position: fixed;
+	transition: 2s all;
+	top: 100%;
+}
+#mey{
+	position: fixed;
+	transition: 2s all;
+	top: 100%;
+}
+#empe{
+	position: fixed;
+	transition: 2s all;
+	left: 100%;
+}
+#preto{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: black;
+	transition: 2s all;
+	opacity: 0;
+	pointer-events: none;
+}
+#personagem{
+	text-align: center;
+}
+#deperto{
+	position: fixed;
+	transition: 2s all;
+	top: 100%;
+	left: 50%;
+}
+#weslley{
+	position: fixed;
+	transition: 2s all;
+	left: 100%;
+	pointer-events: none;
+}
+#garcom{
+	position: fixed;
+	transition: 2s all;
+	left: 100%;
+	pointer-events: none;
+}
+#x{
+    border: 0;
+    font-size: 11px;
+    color: white;
+    background-color: red;
+    padding: 10px 20px;
+    font-family: calibri;
+    border-radius: 50%;
+    vertical-align: top;
+}
+#cardapio{
+	top: 10%;
+    left: 40%;
+}
+#pretin{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	transition: 2s all;
+	opacity: 0;
+	z-index: -1;
+}
+
+</style>
+</head>
+<body>
+<div>
+<center><b id="titulo">Uesllow Dating Simulator</b>
+</center>
+</div>
+<!-- não esquecer de ativar o autoplay -->
+<audio autoplay="true" loop="true">
+<source src="audio/inicio.mp3" type="audio/mp3" id="musica">	
+</audio>
+<div id="menu">
+<input class="botao" type="button" value="Iniciar" id="iniciar" onclick="setTimeout(iniciar)">
+<a href="../../html/menujogos.html">
+<input class="botao" type="button" value="Sair" id="sair" onclick="sair()">	
+</a>
+</div>
+<div id="personagem">
+<img src="recursos/imagem/caracter/welly.png" width="800" id="boneco" class="hidden">
+<div id="triki" class="hidden">
+<img src="recursos/imagem/caracter/triki.png" width="800">
+</div>
+<div id= "empe" class="hidden">
+<img src="recursos/imagem/caracter/empe.png" width="800">
+</div>
+<div id="deperto" class="hidden">
+<img src="recursos/imagem/caracter/boneca.png" width="800">
+</div>
+<div id="weslley" class="hidden">
+<img src="recursos/imagem/caracter/weslley.png" width="800">
+</div>
+<div id="garcom" class="hidden">
+<img src="recursos/imagem/caracter/garcom.png" width="800">
+</div>
+<div id="mey" class="hidden">
+<img src="recursos/imagem/caracter/mey.png" width="800">
+</div>
+<div id="dialogo" class="hidden"><p></p>
+</div>
+<div id="resposta" class="hidden">
+<div>
+<input class= "a" type="button" value="Ánalise e desenvolvimento de sistemas" onclick="setTimeout(sistemas)">
+</div>
+<div>
+<input class= "b" type="button" value="Ciências sociais" onclick="setTimeout(psicologia)">
+</div>
+<div>
+<input class= "c" type="button" value="Não interessa pra você palhaço, morre diabo!!!" onclick="rejeitar()">
+</div>
+</div>
+<div id="respostadois" class="hidden">
+<div>
+<input class= "a" type="button" value="Comer e dormir" onclick="setTimeout(comer)">
+</div>
+<div>
+<input class= "b" type="button" value="Beber muita água pra me hidratar" onclick="setTimeout(beber)">
+</div>
+<div>
+<input class="c" type="button" value="Não interessa pra vc palhaço, morre diabo!!!" onclick="setTimeout(rejeitar)">
+</div>
+</div>
+<div id = "respostatres" class="hidden">
+<div>
+<input class="a" type="button" value="own, isso é tão fofo *-*" onclick="setTimeout(fofo)">
+</div>
+<div>
+<input class="b" type="button" value="uhuhuhuhuhu >///<" onclick= "setTimeout(uhu)">
+</div>
+<div>
+<input class="c" type="button" value="Vai se foder, nem te conheço seu otário" onclick="setTimeout(otario)">
+</div>
+</div>
+<div id="respostaquatro" class="hidden">
+<div>
+<input class="a" type="button" value="Quero sim *-*" onclick="setTimeout(queroagua)">
+</div>
+<div>
+<input class="b" type="button" value="É sem segundas intenções, né?" onclick="setTimeout(intencoes)">
+</div>
+<div>
+<input class="c" type="button" value="Eu mal te conheço, rala daqui seu tarado!!" onclick="setTimeout(tarado)">
+</div>
+</div>
+<div id="respostacinco" class="hidden">
+<div>
+<input class="a" type="button" value="Claro que sim *-*" onclick="setTimeout(quero)">
+</div>
+<div>
+<input class="b" type="button" value="Pode sim, eu vou adorar ^-^" onclick="setTimeout(quero)">
+</div>
+<div>
+<input class="c" type="button" value="Não, acabei de te conhecer, vai se foder" onclick="setTimeout(rejeitar)">
+</div>
+</div>
+<div id="decisao" class="hidden">
+<div>
+<input class="b" type="button" value="(Continuar com Weslley)" onclick="setTimeout(continuar)">
+</div>
+<div>
+<input class="c" type="button" value="(Escolher a Kettry)" onclick="setTimeout(kettry)">
+</div>
+</div>
+<div id="cenasete_resposta" class="hidden">
+<div>
+<input class="a" type="button" value="Sim" onclick="setTimeout(sim)">
+</div>
+<div>
+<input class="b" type="button" value="Sim, mas por que quer saber?" onclick="setTimeout(simpq)">
+</div>
+<div>
+<input class="c" type="button" value="Não te interessa!" onclick="setTimeout(interessa)">
+</div>
+</div>
+<div id="cenaoito_resposta" class="hidden">
+<div>
+<input class="b" type="button" value="Topo sim, pode ser às 8?" onclick="setTimeout(topo)">
+</div>
+<div>
+<input class="c" type="button" value="Sair com você? Nem fodendo!" onclick="setTimeout(nem)">
+</div>
+</div>
+<div id="cenafinal_resposta" class="hidden">
+<div>
+<input class="b" type="button" value="Hahahaha você é bem galanteador >///<" onclick="setTimeout(galanteador)">
+</div>
+<div>
+<input class="c" type="button" value="(Sair correndo como se não houvesse o amanhã)" onclick="setTimeout(saircorrendo)">
+</div>
+</div>
+<div id="olhar" class="hidden">
+<input class="c" type="button" value="Olhar cardápio" onclick="lermenu('cardapio')">
+</div>
+<div id="cardapio" class="hidden">
+<img src="recursos/imagem/other/cardapio.jpg" width="333" height="500" >
+<input id="x" type="button" value="x" onclick="fechamenu('cardapio')">
+</div>
+<div id="lindeza" class="hidden">
+<div>
+<input class="b" type="button" value="Você também está lindo ^u^" onclick="setTimeout(vctbm)">
+</div>
+<div>
+<input class="c" type="button" value="Obrigada" onclick="setTimeout(obrigada)">
+</div>
+</div>
+<div id="tentaculo" class="hidden">
+<div>
+<input class="b" type="button" value="Mas só tem tentáculo?" onclick="setTimeout(sotemtentaculo)">
+</div>
+<div>
+<input class="c" type="button" value="Eu gostaria de um tentáculo cozido, por favor" onclick="setTimeout(tentaculocozido)">
+</div>
+</div>
+<div id="consolo" class="hidden">
+<div>
+<input class="b" type="button" value="Awn Ueslow" onclick="setTimeout(awn)">
+</div>
+<div>
+<input class="c" type="button" value="Para de chorar, seu preto viado!" onclick="setTimeout(pretoviado)">
+</div>
+</div>
+<div id="perguntanome" class="hidden">
+<input class="b" type="text" placeholder="Qual é o seu nome?" onkeydown="definenome(event)" id="camponome">
+</div>
+</div>
+<div id="perguntanome_dois" class="hidden">
+<input class="b" type="text" placeholder="Qual é o seu nome?" onkeydown="definenome_dois(event)" id="camponome_dois">
+</div>
+<div id="decisao_dois" class="hidden">
+<div>
+<input class="b" type="button" value="Continuar com Weslley" onclick="setTimeout(continuar_dois)">
+</div>
+<div>
+<input class="c" type="button" value="Escolher Meiriane" onclick="setTimeout(meiriane)">
+</div>
+</div>
+<div id="boanoite" class="hidden">
+<div>
+<input class="c" type="button" value="(Dar boa noite e entrar)" onclick="setTimeout(darboanoite)">
+</div>
+<div>
+<input class="b" type="button" value="(Convidar Weslley para entrar)" onclick="setTimeout(convidar)">
+</div>
+</div>
+<div id="trikiorzellow" class="hidden">
+<div>
+<input class="c" type="button" value="(Escolher Kettry)" onclick="setTimeout(escolhertriki)">
+</div>
+<input class="b" type="button" value="(Continuar com Weslley)" onclick="setTimeout(escolherzesllow)">
+</div>
+<div id="livrepralambada" class="hidden">
+<div>
+<input class="b" type="button" value="Sim" onclick="setTimeout(simlivre)">
+</div>
+<div>
+<input class="c" type="button" value="Não" onclick="setTimeout(naolivre)">
+</div>
+</div>
+<div id="resposta_lambada" class="hidden">
+<div>
+<input class="b" type="button" value="Topo sim" onclick="setTimeout(simlambada)">
+</div>
+<div>
+<input class="c" type="button" value="Não, odeio lambada" onclick="setTimeout(naolivre)">
+</div>
+</div>
+<div id="beijo" class="hidden">
+<div>
+<input class="b" type="button" value="(Dar um beijo e ter uma noite íncrivel)" onclick="setTimeout(beijo)">
+</div>
+<div>
+<input class="c" type="button" value="(Dispensar Weslley acusando-o de tarado)" onclick="setTimeout(dispensa)">
+</div>
+</div>
+<div id="namorar" class="hidden">
+<div>
+<input class="b" type="button" value="Claro que sim *-*" onclick="setTimeout(aceito)">
+</div>
+<div>
+<input class="c" type="button" value="Não, ainda é muito cedo nem te conheço direito" onclick="setTimeout(naoaceito)">
+</div>
+</div>
+<div id="pretin" class="hidden">
+<img src="recursos/imagem/background/pretin.jpg">
+</div>
+<script type="text/javascript">var nome= "??????";</script>
+<script type="text/javascript" src="recursos/js/default.js"></script>
+<script type="text/javascript" src="recursos/js/cena.js"></script>
+<script type="text/javascript" src="recursos/js/cenaum.js"></script>
+<script type="text/javascript" src="recursos/js/cenadois.js"></script>
+<script type="text/javascript" src="recursos/js/cenatres.js"></script>
+<script type="text/javascript" src="recursos/js/cenaquatro.js"></script>
+<script type="text/javascript" src="recursos/js/cenacinco.js"></script>
+<script type="text/javascript" src="recursos/js/cenaseis.js"></script>
+<script type="text/javascript" src="recursos/js/cenaseisaposagua.js"></script>
+<script type="text/javascript" src="recursos/js/cenasete.js"></script>
+<script type="text/javascript" src="recursos/js/cenaseteaposagua.js"></script>
+<script type="text/javascript" src="recursos/js/cenaoito.js"></script>
+<script type="text/javascript" src="recursos/js/cenanove.js"></script>
+<script type="text/javascript" src="recursos/js/cenadez.js"></script>
+<script type="text/javascript" src="recursos/js/cenaonze.js"></script>
+<script type="text/javascript" src="recursos/js/cenadoze.js"></script>
+<script type="text/javascript" src="recursos/js/cenatreze.js"></script>
+<script type="text/javascript" src="recursos/js/cenafinal.js"></script>
+<script type="text/javascript" src="recursos/js/menu.js"></script>
+<script type="text/javascript" src="recursos/js/cenakettry.js"></script>
+<script type="text/javascript" src="recursos/js/cenafinaltriki.js"></script>
+<script type="text/javascript">
+var gui = require('nw.gui');
+var win = gui.Window.get();
+win.maximize();
+win.show();
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no"> 
+	<title>Menu de jogos</title>
+<style>
+*{
+    margin: 0;
+    cursor: url(/imagens/unicornio.png), auto;
+}
+html, body{
+	height: 100%;
+}
+body{
+	background: linear-gradient(to bottom, #88ff1b 0%, white 100%);
+}
+#titulo{
+	background-color: rgb(138, 245, 40);
+	width: 100%;
+	padding: 8px;
+	font-family: Ubuntu, Calibri;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	display: inline-block;
+}
+/*#titulo div span{
+	padding: 8px;
+}*/
+#titulo a{
+	display: inline-block;
+	vertical-align: super;
+	color: green;
+	float: left;
+	margin: 10px;
+}
+.botao{
+	position: absolute;
+	transition: 2s all;
+	top: 12%;
+	right: 2%;
+	height: 40px;
+	border-radius: 5px;
+	font-family: Georgia;
+	border: 1px solid seashell;
+	background-color: rgba(253, 253, 253, 0.54);
+}
+.botao:hover{
+	background-color: white;
+}
+.botao:active{
+	background-color: green;
+}
+#troslla{
+	width: 100%;
+	text-align: center;
+	font-family: Arial;
+	padding: 6px;
+	color: white;
+	text-shadow: 2px 2px 8px black;
+}
+
+</style>
+</head>
+<body>
+	<div id="titulo">
+		<a href="/">
+			<span>&lArr;voltar</span>
+		</a>
+		<h1>
+			<span>Jogos</span>
+		</h1>
+	</div>
+
+	<div id="troslla">
+		<p></p>
+	</div>
+
+	<a href="/jogos/weslley/">
+		<input id="wds" class="botao" type="button" value="weslley Dating Simulator">
+	</a>
+
+<script type="text/javascript">
+	function $(qs){
+		return document.querySelector(qs);
+	}
+
+	var botao = $('#wds');
+
+	botao.addEventListener("mouseover", function(){
+		$('#wds').style.left = "2%";
+		$('#wds').style.backgroundColor = "#00FF00";
+		$('#troslla').innerText = "Você caiu no botão trosllador";
+	});
+	
+</script>
+</body>
+</html>

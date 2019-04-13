@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Não é jogo</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		border: 0;
+		margin: 0;
+		user-select: none;
+		cursor: url(/imagens/unicornio.png), auto;
+	}
+	*:focus{
+		outline: 0;
+	}
+	html, body{
+		height: 100%;
+	}
+	body{
+		background: linear-gradient(to bottom, #c500f7 0%, white 100%);
+
+	}
+	#title a{
+		display: inline-block;
+		vertical-align: super;
+		color: seashell;
+		float: left;
+		margin: 10px;
+	}
+	#title{
+		background-color: rgba(95, 5, 101, 0.48); 
+		width: 100%;
+		padding: 8px;
+		font-family: Ubuntu, Calibri;
+		font-size: 20px;
+		color: black;
+		text-align: center;
+		display: inline-block;
+	}
+	#j{
+		background-color: mistyrose;
+		color: #ff00a5;
+		font-size: 24px;
+		position: fixed;
+		top: 20%;
+		left: 50%;
+		padding: 8px;
+		text-align: center;
+	}
+	#j:hover{
+		background-color: seashell;
+		cursor: pointer;
+
+	}
+	</style>
+</head>
+<body>
+	<div id="title">
+		<a href="/">
+			<span>&lArr;voltar</span>
+		</a>
+		<h1>Aqui tem os jogos que não sei se são jogos</h1>
+	</div>
+
+	<a href="/jogos/Jokenpo/">
+		<div id="j">Jokenpô</div>
+	</a>
+</body>
+</html>
